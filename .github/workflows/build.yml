@@ -146,3 +146,9 @@ jobs:
           tag_name: build-${{ github.run_number }}
           name: Орб и Дракон (сборка ${{ github.run_number }})
           files: android/app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-apk
+          path: "**/*.apk"
+          
